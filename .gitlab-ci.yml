@@ -1,5 +1,20 @@
-demo_job_1:
-     tags:
-       - ci
+image: maven:3.3-jdk-8-alpine
+
+stages:
+ # - test
+  - build_frontend
+  - build_main
+  - dockerize
+
+
+build_frontend:
      script:
-       - echo Hello World
+       - echo 'build_frontend'
+
+build_main:
+     script:
+       - echo 'build_main'
+
+dockerize:
+     script:
+       - echo 'dockerize'
